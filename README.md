@@ -73,7 +73,7 @@ Delta compression using up to 4 threads
 Compressing objects: 100% (2/2), done.       
 Writing objects: 100% (4/4), 353 bytes | 353.00 KiB/s, done.
 Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git
+To https://github.com/CynthiaUmuhire/ bunde-1-exercise-1.git
    a9b4ebf..064144b  main -> main
 
 umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
@@ -1046,4 +1046,422 @@ branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
 
 umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
 $
+```
+ ## Bundle 4
 
+### Exercise 1
+``` bash:
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git branch -a
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+* ft/home-page-redesign
+  ft/service-redesign
+  ft/team-page
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/dev
+  remotes/origin/ft/bundle-2
+  remotes/origin/ft/contact-page
+  remotes/origin/ft/faq-page
+  remotes/origin/ft/home-page-redesign
+  remotes/origin/ft/service-redesign
+  remotes/origin/ft/team-page
+  remotes/origin/main
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/home-page-redesign)
+$ git checkout main 
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git remote add git-copy https://github.com/CynthiaUmuhire/git-copy.git
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git remote -v
+git-copy        https://github.com/CynthiaUmuhire/git-copy.git (fetch)
+git-copy        https://github.com/CynthiaUmuhire/git-copy.git (push)
+origin  https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git (fetch)
+origin  https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git (push)
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git add home.html
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git commit -m 'new changes on the home page'
+[main 2a89fbf] new changes on the home page
+ 1 file changed, 1 insertion(+)
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git push origin 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads      
+Compressing objects: 100% (3/3), done.       
+Writing objects: 100% (3/3), 348 bytes | 348.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git
+   5b8469b..2a89fbf  main -> main
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git push git-copy
+Enumerating objects: 39, done.
+Counting objects: 100% (39/39), done.        
+Delta compression using up to 4 threads
+Compressing objects: 100% (35/35), done.     
+Writing objects: 100% (39/39), 5.10 KiB | 580.00 KiB/s, done.
+Total 39 (delta 20), reused 3 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (20/20), done 
+To https://github.com/CynthiaUmuhire/git-copy.git
+ * [new branch]      main -> main
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$
+```
+
+### Exercise 2
+``` bash:
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git branch ft/footer
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git add home.html
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git status
+On branch ft/footer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   home.html
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git commit -m 'adding the footer to the homepage'
+[ft/footer 67702bd] adding the footer to the homepage
+ 1 file changed, 3 insertions(+)
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git add .
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git status
+On branch ft/footer
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+        modified:   service.html
+        modified:   services.html
+        modified:   team.html
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer 
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git push --set-upstream origin ft/footer 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads      
+Compressing objects: 100% (3/3), done.       
+Writing objects: 100% (3/3), 389 bytes | 194.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/bunde-1-exercise-1/pull/new/ft/footer      
+remote:
+To https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git
+ * [new branch]      ft/footer -> ft/footer  
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git status
+On branch ft/footer
+Your branch is up to date with 'origin/ft/footer'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   about.html
+        modified:   service.html
+        modified:   services.html
+        modified:   team.html
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git add --all
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git push --set-upstream origin ft/footer 
+Everything up-to-date
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+M       about.html
+M       service.html
+M       services.html
+M       team.html
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/footer
+Switched to branch 'ft/footer'
+M       about.html
+M       service.html
+M       services.html
+M       team.html
+Your branch is up to date with 'origin/ft/footer'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git branch ft/squashing
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (main)
+$ git checkout ft/squashing
+Switched to branch 'ft/squashing'
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git merge --squash ft/footer
+Updating 2a89fbf..45c3561
+Fast-forward
+Squash commit -- not updating HEAD
+ about.html    | 3 +++
+ home.html     | 3 +++
+ service.html  | 3 +++
+ services.html | 3 +++
+ team.html     | 3 +++
+ 5 files changed, 15 insertions(+)
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git commit -m 'footer changes squashing'
+[ft/squashing f0c2ef6] footer changes squashing
+ 5 files changed, 15 insertions(+)
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$  git push --set-upstream origin ft/squashing
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.        
+Delta compression using up to 4 threads      
+Compressing objects: 100% (7/7), done.       
+Writing objects: 100% (7/7), 920 bytes | 460.00 KiB/s, done.
+Total 7 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 3 local objects.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/bunde-1-exercise-1/pull/new/ft/squashing   
+remote:
+To https://github.com/CynthiaUmuhire/bunde-1-exercise-1.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+
+umuhi@IKYK MINGW64 ~/Desktop/Gym-Git-Exercise-Solutions (ft/squashing)
+$
+```
+
+## Bundle 5
+### Exercise1
+
+### Exercise 2
+
+``` bash:
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git add index.html
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git commit -m 'Changes to the index.html file'
+[main 0a8de1d] Changes to the index.html file
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads      
+Compressing objects: 100% (3/3), done.       
+Writing objects: 100% (3/3), 346 bytes | 346.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
+   d1d3f9c..0a8de1d  main -> main
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$
+```
+
+## Bundle 6
+
+### exercise 1
+``` bash:
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git branch new_feature
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (main)
+$ git checkout new_feature
+Switched to branch 'new_feature'
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git add index-3.html
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git commit -m 'changes to the menu page '
+[new_feature 9c40fac] changes to the menu page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git push
+fatal: The current branch new_feature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin new_feature
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git push --set-upstream origin new_feature
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads       
+Compressing objects: 100% (3/3), done.        
+Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'new_feature' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/git-cafe-exercise/pull/new/new_feature       
+remote:
+To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
+ * [new branch]      new_feature -> new_feature
+branch 'new_feature' set up to track 'origin/new_feature'.
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$
+```
+
+### Exercise 2 & 3
+``` bash:
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git branch bug-fix
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (new_feature)
+$ git checkout  bug-fix
+Switched to branch 'bug-fix'
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git add index-4.html
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git commit - m 'Chnanging the title of index
+-4.html to contacts'
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'Chnanging the title of index-4.html to contacts' did not match any file(s) known to git
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git commit - m 'Changing the title of index4
+ to contacts'
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'Changing the title of index4 to contacts' did not match any file(s) known to git
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git commit -m 'Changing the title of index4 
+to contacts'
+[bug-fix e0e059c] Changing the title of index4 to contacts
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git push
+fatal: The current branch bug-fix has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug-fix    
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git push --set-upstream origin bug-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads       
+Compressing objects: 100% (3/3), done.        
+Writing objects: 100% (3/3), 336 bytes | 336.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'bug-fix' on GitHub by visiting:
+remote:      https://github.com/CynthiaUmuhire/git-cafe-exercise/pull/new/bug-fix
+remote:
+To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
+ * [new branch]      bug-fix -> bug-fix       
+branch 'bug-fix' set up to track 'origin/bug-fix'.
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git add index-4.html
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git commit -m 'Changing the telephone for the index-4.html from +1 800 603 6035 to +1 800 
+659 6035'
+[bug-fix a7adf81] Changing the telephone for the index-4.html from +1 800 603 6035 to +1 800 659 6035
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+umuhi@IKYK MINGW64 ~/Desktop/git-cafe-exercise (bug-fix)
+$ git push --set-upstream origin bug-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads       
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads      
+Compressing objects: 100% (3/3), done.       
+Writing objects: 100% (3/3), 358 bytes | 179.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/CynthiaUmuhire/git-cafe-exercise.git
+   e0e059c..a7adf81  bug-fix -> bug-fix      
+branch 'bug-fix' set up to track 'origin/bug-fix'.
+
+```
